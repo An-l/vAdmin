@@ -1,28 +1,37 @@
 <template>
-  <div class="app-wrapper">
-    <!-- <sidebar class="sidebar-container"></sidebar> -->
+  <div class="app-wrapper" :class="{hideSidebar: isSidebarCollapse}">
+    <sidebar :isCollapse="isSidebarCollapse" class="sidebar-container"></sidebar>
     <div class="main-container">
-      <!-- <app-main></app-main> -->
+      <navbar @toggleSidebarCollapse="toggleSidebarCollapse"></navbar>
+      <app-main></app-main>
     </div>
   </div>
 </template>
 
 <script>
-import { Sidebar, AppMain } from './components/index.js'
+import { Sidebar, AppMain, Navbar } from './components/index.js'
 
 export default {
   name: 'layout',
+  data() {
+    return {
+      isSidebarCollapse: false // 控制侧边栏的折叠
+    }
+  },
+  methods: {
+    toggleSidebarCollapse() {
+      let flag = this.isSidebarCollapse
+      this.isSidebarCollapse = !flag
+    }
+  },
   components: {
     Sidebar,
-    AppMain
+    AppMain,
+    Navbar
   }
 }
 </script>
 
-<style lang="scss" scoped>
-.app-wrapper {
-  position: relative;
-  height: 100%;
-  width: 100%;
-}
+<style lang="scss">
+@import './index.scss';
 </style>

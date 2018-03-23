@@ -3,13 +3,14 @@
     <sidebar :isCollapse="isSidebarCollapse" class="sidebar-container"></sidebar>
     <div class="main-container">
       <navbar @toggleSidebarCollapse="toggleSidebarCollapse"></navbar>
+      <tags-view></tags-view>
       <app-main></app-main>
     </div>
   </div>
 </template>
 
 <script>
-import { Sidebar, AppMain, Navbar } from './components/index.js'
+import { Sidebar, AppMain, Navbar, TagsView } from './components/index.js'
 
 export default {
   name: 'layout',
@@ -27,7 +28,8 @@ export default {
   components: {
     Sidebar,
     AppMain,
-    Navbar
+    Navbar,
+    TagsView
   }
 }
 </script>

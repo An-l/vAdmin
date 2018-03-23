@@ -32,7 +32,7 @@ export default {
   width: 20px;
   height: 20px;
   transform: rotate(90deg);
-  transition: 0.38s;
+  transition: transform 0.38s;
   transform-origin: 50% 50%;
 }
 

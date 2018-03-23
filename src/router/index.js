@@ -24,13 +24,45 @@ export const constantRouterMap = [
   {
     path: '/',
     component: Layout,
-    // redirect: '/dashboard',
-    name: 'Dashboard',
+    redirect: '/home',
+    name: 'Home',
     hidden: true,
-    children: [{
-      path: 'dashboard',
-      component: () => import('views/dashboard')
-    }]
+    children: [
+      {
+        path: 'dashboard',
+        component: () => import('views/dashboard')
+      },
+      {
+        name: 'Home',
+        path: 'home',
+        component: () => import('views/home'),
+        meta: { title: 'Home' }
+      }
+    ]
+  },
+  {
+    path: '/userList',
+    component: Layout,
+    children: [
+      {
+        path: 'index',
+        name: 'UserList',
+        component: () => import('views/userList'),
+        meta: { title: '用户管理' }
+      }
+    ]
+  },
+  {
+    path: '/postList',
+    component: Layout,
+    children: [
+      {
+        path: 'index',
+        name: 'PostList',
+        component: () => import('views/postList'),
+        meta: { title: '文章管理' }
+      }
+    ]
   },
 
   { path: '*', redirect: '/404', hidden: true }

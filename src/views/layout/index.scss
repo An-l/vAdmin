@@ -10,13 +10,14 @@
   bottom: 0;
   left: 0;
   width: 200px;
-  transition: width 0.28s;
+  transition: width 0.3s;
 }
 
 .main-container {
   margin-left: 200px;
   height: 100%;
-  transition: margin-left 0.28s;
+  transition: margin-left 0.3s;
+  background: gren;
 }
 
 .navbar {
@@ -28,11 +29,7 @@
   .sidebar-container {
     width: 64px;
 
-    .el-submenu__title {
-        span {
-            transition: all .3s cubic-bezier(.55, 0, .1, 1);
-        }
-    }
+   
   }
   .main-container {
     margin-left: 64px;

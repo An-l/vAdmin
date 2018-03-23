@@ -1,12 +1,10 @@
 <template>
-  <div class="app-main">
-    <router-view/>
-  </div>
+  <div>postList</div>
 </template>
 
 <script>
 export default {
-  name: 'AppMain'
+
 }
 </script>
 

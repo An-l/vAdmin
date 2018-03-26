@@ -4,7 +4,7 @@
     <div class="main-container">
       <navbar @toggleSidebarCollapse="toggleSidebarCollapse"></navbar>
       <tags-view></tags-view>
-      <app-main></app-main>
+      <app-main class="app-container"></app-main>
     </div>
   </div>
 </template>

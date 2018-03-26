@@ -35,8 +35,6 @@ export default {
     }
   },
   methods: {
-    handleOpen() {},
-    handleClose() {}
   }
 }
 </script>

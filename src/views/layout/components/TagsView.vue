@@ -1,7 +1,9 @@
 <template>
   <div class="tags-view-container">
-    <div class="tag" :class="{'active': isActive(tag)}" v-for="(tag, index) in viewTagsList" :key="index" @close="handleClose(index)">
-      {{tag.meta.title}}
+    <div class="tag" :class="{'active': isActive(tag)}" v-for="(tag, index) in viewTagsList" :key="index">
+      <router-link :to="tag.path">
+        {{tag.meta.title}}
+      </router-link>
       <i @click="handleClose(index)" class="el-icon-close"></i>
     </div>
   </div>
@@ -63,6 +65,9 @@ export default {
     isActive(route) {
       return route.path === this.$route.path
     }
+  },
+  mounted () {
+    this.addViewTags()
   }
 }
 </script>
@@ -73,6 +78,7 @@ export default {
   line-height: 36px;
   padding-left: 10px;
   border-bottom: 1px solid #eee;
+  box-shadow: 0px 1px 4px 0px #e4e4e4;;
   .tag {
     display: inline-block;
     margin-right: 10px;
